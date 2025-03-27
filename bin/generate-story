@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+import path from 'path';
+import { generateStory } from '../dist/generateStory.js';
+import { startOllama, stopOllama } from '../dist/ollamaClient.js';
+
+async function run() {
+  const inputPath = process.argv[2];
+  if (!inputPath) {
+    console.error('❌ Please provide a relative path to your React component.');
+    process.exit(1);
+  }
+
+  const resolvedPath = path.resolve(process.cwd(), inputPath);
+
+  await startOllama();
+
+  try {
+    await generateStory(resolvedPath);
+  } catch (error) {
+    console.error('❌ Error generating story:', error);
+  } finally {
+    await stopOllama();
+  }
+}
+
+run();

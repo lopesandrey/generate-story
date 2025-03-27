@@ -1,0 +1,28 @@
+{
+  "name": "generate-story",
+  "version": "1.0.0",
+  "bin": {
+    "generate-story": "./bin/generate-story"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "setup": "bash install.sh",
+    "lint": "eslint . --ext .js,.ts,.sh",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.23.0",
+    "eslint": "^9.23.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.5",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3",
+    "ts-node": "^10.0.0",
+    "typescript": "^5.0.0",
+    "typescript-eslint": "^8.28.0"
+  }
+}
