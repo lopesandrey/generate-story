@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import path from 'path';
-import { generateStory } from '../dist/generateStory.js';
-import { startOllama, stopOllama } from '../dist/ollamaClient.js';
+import { generateStory } from '../dist/cli/generateStory.js';
+import { startOllama, stopOllama } from '../dist/services/ollamaClient.js';
 
 async function run() {
   const inputPath = process.argv[2];
